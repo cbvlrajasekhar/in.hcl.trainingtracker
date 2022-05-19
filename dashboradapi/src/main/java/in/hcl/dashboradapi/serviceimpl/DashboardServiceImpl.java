@@ -29,33 +29,32 @@ public class DashboardServiceImpl implements DashboardService {
 
 	@Override
 	public Long findTotalHoursOfTrainings(Long trainingRegID) {
-		//List<Training> trainings = restTemplate.getForObject("http://shedule-service/api/schedules/all" , List.class);
 		return  (long) 20;
 	}
 
 	@Override
-	public String findTrainingStatus(Long userId, Long trainingID) {
+	public String findTrainingStatus(String name) {
 		
 		return "Completed";
 	}
 
 	@Override
 	public String findTrainingType(String name) {
-		Training training1 = restTemplate.getForObject("http://training-service/api/trainings/"+ training.getModulename(), Training.class);
+		Training training1 = restTemplate.getForObject("http://training-service/api/trainings/"+ name, Training.class);
 		
 		return training1.getType();
 	}
 
 	@Override
 	public Double findTrainingBudget( String name) {
-Training training2 = restTemplate.getForObject("http://training-service/api/trainings/"+training.getModulename(), Training.class);
+Training training2 = restTemplate.getForObject("http://training-service/api/trainings/"+name, Training.class);
 		
 		return training2.getPrice();
 	}
 
 	@Override
 	public Double findTrainingRating(String name) {
-Training training3 = restTemplate.getForObject("http://training-service/api/trainings/"+ training.getModulename(), Training.class);
+Training training3 = restTemplate.getForObject("http://training-service/api/trainings/"+ name, Training.class);
 		
 		return training3.getTraining_rating();
 	}

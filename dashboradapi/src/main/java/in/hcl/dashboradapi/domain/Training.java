@@ -16,9 +16,9 @@ public class Training {
 	
 	private double price;
 	private double percentage_scored;
-	
+	private Long Hours ;
 	private Date scheduled_date;
-	
+	private String status;
 	private Date completed_by;
 	
 	private String trainer_name;
@@ -83,6 +83,25 @@ public class Training {
 	}
 	public String getType() {
 		return type;
-	}	
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public void setTraining_rating(double training_rating) {
+		this.training_rating = training_rating;
+	}
+	public Long getHours() {
+		return Hours;
+	}
+	public void setHours(Long hours) {
+		Hours = hours;
+	}
+		
 
 }

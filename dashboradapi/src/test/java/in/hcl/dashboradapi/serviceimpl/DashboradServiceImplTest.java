@@ -41,7 +41,7 @@ class DashboradServiceImplTest {
 	
 	@Test
 	void test_givenLongUserIdAndLongTrainingIdAsParameter_ShouldReturnTrainingStatus() throws Exception  {
-			String trainingStatus =dashboardService.findTrainingStatus((long)2, (long)2);
+			String trainingStatus =dashboardService.findTrainingStatus("");
 			assertEquals( "Completed", trainingStatus);	
 		}
 	

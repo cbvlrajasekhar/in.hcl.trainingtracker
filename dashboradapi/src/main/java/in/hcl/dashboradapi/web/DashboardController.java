@@ -30,25 +30,19 @@ public class DashboardController {
 	@Autowired
 	private DashboardService dashboardService;
 	
-//	@GetMapping("/{UserId}/{trainingId}")
-//	public ResponseEntity<?> getDashboardInfo(@PathVariable Long UserId,@PathVariable Long trainingId)
-//	{
-//		Dashboard dashboard= new Dashboard();
-//		
-//		dashboard.setTotalTrainings(dashboardService.findTotalTrainings(UserId, trainingId));
-//		dashboard.setTotalTrainingHours(dashboardService.findTotalHoursOfTrainings(UserId, trainingId));
-//		dashboard.setTrainingStatus(dashboardService.findTrainingStatus(UserId, trainingId));
-//		dashboard.setTrainingType(dashboardService.findTrainingType(UserId, trainingId));
-//		dashboard.setBudget(dashboardService.findTrainingBudget(UserId, trainingId));
-//		dashboard.setTrainingRating(dashboardService.findTrainingRating(UserId, trainingId));
-//		return new  ResponseEntity<Dashboard>(dashboard, HttpStatus.OK);
-//		
-//	}
 	@GetMapping("/totalTrainings")
 	public ResponseEntity<?> getTotalTrainings(){
 	Long totalTrainings = dashboardService.findTotalTrainings();
 	
 	return new ResponseEntity<Long>(totalTrainings ,HttpStatus.OK);
+
+	}
+	
+	@GetMapping("/totalTrainingDuration/{trainingID}")
+	public ResponseEntity<?> getTotalTrainingDuration(@PathVariable Long trainingID){
+	Long totalHours = dashboardService.findTotalHoursOfTrainings(trainingID);
+	
+	return new ResponseEntity<Long>(totalHours ,HttpStatus.OK);
 
 	}
 	
@@ -58,6 +52,8 @@ public class DashboardController {
 	training.setType(dashboardService.findTrainingType(moduleName));
 	training.setPrice(dashboardService.findTrainingBudget(moduleName));
 	training.setTraining_rating( dashboardService.findTrainingRating(moduleName));
+	training.setStatus(dashboardService.findTrainingStatus(moduleName));
+	
 	return new ResponseEntity<Training>(training ,HttpStatus.OK);
 
 	}
