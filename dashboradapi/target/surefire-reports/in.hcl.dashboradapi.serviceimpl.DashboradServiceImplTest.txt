@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: in.hcl.dashboradapi.serviceimpl.DashboradServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in in.hcl.dashboradapi.serviceimpl.DashboradServiceImplTest
+test_givenLongUserIdAndLongTrainingIdAsParameter_ShouldReturnTrainingBudget  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0.0> but was: <10000.0>
+	at in.hcl.dashboradapi.serviceimpl.DashboradServiceImplTest.test_givenLongUserIdAndLongTrainingIdAsParameter_ShouldReturnTrainingBudget(DashboradServiceImplTest.java:57)
+
+test_givenLongUserIdAndLongTrainingIdAsParameter_ShouldReturnTrainingAverageTrainingRating  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0.0> but was: <5.4>
+	at in.hcl.dashboradapi.serviceimpl.DashboradServiceImplTest.test_givenLongUserIdAndLongTrainingIdAsParameter_ShouldReturnTrainingAverageTrainingRating(DashboradServiceImplTest.java:63)
+
+test_givenStringEmployeeAndLongIdAsParameter_ShouldReturnTotalHoursOfTrainings  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <20>
+	at in.hcl.dashboradapi.serviceimpl.DashboradServiceImplTest.test_givenStringEmployeeAndLongIdAsParameter_ShouldReturnTotalHoursOfTrainings(DashboradServiceImplTest.java:39)
+
+test_givenStringEmployeeAndLongIdAsParameter_ShouldReturnTotalTrainings  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <10>
+	at in.hcl.dashboradapi.serviceimpl.DashboradServiceImplTest.test_givenStringEmployeeAndLongIdAsParameter_ShouldReturnTotalTrainings(DashboradServiceImplTest.java:34)
+
