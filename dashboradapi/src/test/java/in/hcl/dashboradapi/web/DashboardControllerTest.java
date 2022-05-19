@@ -43,7 +43,7 @@ class DashboardControllerTest {
 	
 	@Test
 	void test_getTotalTrainingStatus() throws Exception {
-		BDDMockito.given(dashboardService.findTrainingStatus(Mockito.anyLong(),Mockito.anyLong())).willReturn("completed");
+		BDDMockito.given(dashboardService.findTrainingStatus(Mockito.anyString())).willReturn("completed");
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/dashboard/1/1"))
 		.andExpect(status().isOk())
 		.andExpect(jsonPath("$.trainingStatus").value("completed"));
